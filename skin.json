@@ -6,6 +6,9 @@
         "Carl Schwan"
     ],
     "url": "",
+    "requires": {
+        "MediaWiki": ">= 1.39.0"
+    },
     "descriptionmsg": "Aether descr",
     "namemsg": "skinname-aether",
     "license-name": "CC-BY-SA-4.0",
@@ -14,7 +17,18 @@
         "aether": "GlobalVarConfig::newInstance"
     },
     "ValidSkinNames": {
-        "aether": "Aether"
+        "aether": {
+            "class": "SkinAether",
+            "args": [
+                {
+                    "name": "aether",
+                    "bodyOnly": true,
+                    "responsive": true,
+                    "template": "AetherTemplate",
+                    "scripts": [ "skins.aether" ]
+                }
+            ]
+        }
     },
     "MessagesDirs": {
         "Aether": [

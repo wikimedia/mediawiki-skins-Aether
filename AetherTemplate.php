@@ -61,9 +61,6 @@ class AetherTemplate extends BaseTemplate {
         $this->data['namespace_urls'] = array_reverse( $this->data['namespace_urls'] );
         $this->data['personal_urls'] = array_reverse( $this->data['personal_urls'] );
     }
-
-    // Output HTML Page
-    $this->html( 'headelement' );
 ?>
 
   <style>
@@ -293,7 +290,6 @@ class AetherTemplate extends BaseTemplate {
     </section>
   </footer>
 
-  <?php $this->printTrail(); ?>
   <script type="text/javascript" src="/skins/Aether/resources/jquery.ba-throttle-debounce.min.js"></script>
   <script type="text/javascript" src="/skins/Aether/resources/main.js"></script>
   <script>
@@ -304,9 +300,6 @@ class AetherTemplate extends BaseTemplate {
       body.classList.toggle('sidebar-active');
     });
   </script>
-</body>
-</html>
-
 <?php
   }
 

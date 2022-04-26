@@ -19,15 +19,11 @@ use Symfony\Contracts\Cache\ItemInterface;
  * @ingroup Skins
  */
 class SkinAether extends SkinTemplate {
-
-    public $skinname = 'aether';
-    public $stylename = 'Aether';
-    public $template = 'AetherTemplate';
-
     private $neverlandConfig;
 
-    public function __construct() {
+    public function __construct( $options = null ) {
         $this->aetherConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'aether' );
+        parent::__construct( $options );
     }
 
     /**
@@ -42,8 +38,6 @@ class SkinAether extends SkinTemplate {
         // this is better than including this in a CSS fille since it doesn't
         // wait for the CSS file to load before fetching the HTC file.
         $min = $this->getRequest()->getFuzzyBool( 'debug' ) ? '' : '.min';
-        $out->addModules( array('skins.aether') );
-        $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no' );
         $cache = new FilesystemAdapter();
 
         $cdn = 'https://cdn.kde.org';
@@ -77,12 +71,5 @@ class SkinAether extends SkinTemplate {
         foreach ($cdnFiles['js'] as $jsFile) {
             $out->addScriptFile($cdn . $jsFile);
         }
-    }
-
-    /**
-     * Override to pass our Config instance to it
-     */
-    public function setupTemplate( $classname, $repository = false, $cache_dir = false ) {
-        return new $classname( $this->aetherConfig );
     }
 }
