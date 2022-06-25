@@ -238,7 +238,7 @@ class AetherTemplate extends BaseTemplate {
           <a href="https://kde.org/plasma-desktop">Plasma</a>
           <a href="https://kde.org/applications/">KDE Applications</a>
           <a href="https://kde.org/products/frameworks/">KDE Frameworks</a>
-          <a href="https://plasma-mobile.org/overview/">Plasma Mobile</a>
+          <a href="https://plasma-mobile.org/">Plasma Mobile</a>
           <a href="https://neon.kde.org/">KDE neon</a>
           <a href="https://wikitolearn.org/" target="_blank">WikiToLearn</a>
         </nav>
