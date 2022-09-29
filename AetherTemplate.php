@@ -459,9 +459,9 @@ class AetherTemplate extends BaseTemplate {
 
         case 'ACTIONS':
           foreach ($this->data['action_urls'] as $link) { ?>
-            <a id="ca-edit" <?= $link['attributes'] ?> href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
+            <li><a id="ca-edit" <?= $link['attributes'] ?> href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
               <?php echo htmlspecialchars($link['text']) ?>
-            </a>
+            </a></li>
           <?php
           }
           break;
