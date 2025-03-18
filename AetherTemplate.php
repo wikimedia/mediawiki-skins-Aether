@@ -8,6 +8,8 @@
  * @ingroup Skins
  */
 
+use MediaWiki\Linker\Linker;
+
 /**
  * QuickTemplate class for Neverland skin
  * @ingroup Skins
@@ -29,7 +31,7 @@ class AetherTemplate extends BaseTemplate {
     foreach ( $nav as $section => $links ) {
       foreach ( $links as $key => $link ) {
         if ( $section == 'views' && !( isset( $link['primary'] ) && $link['primary'] ) ) {
-          $link['class'] = rtrim( 'collapsible ' . $link['class'], ' ' );
+          $link['class'] = rtrim( 'collapsible ' . ( $link['class'] ?? '' ), ' ' );
         }
 
         $xmlID = isset($link['id']) ? $link['id'] : 'ca-' . $xmlID;
@@ -453,7 +455,7 @@ class AetherTemplate extends BaseTemplate {
         case 'ACTIONS':
           foreach ($this->data['action_urls'] as $link) { ?>
             <li><a id="ca-edit" <?= $link['attributes'] ?> href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
-              <?php echo htmlspecialchars($link['text']) ?>
+              <?php echo htmlspecialchars( $link['text'] ?? '' ) ?>
             </a></li>
           <?php
           }

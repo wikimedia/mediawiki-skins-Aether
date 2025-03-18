@@ -10,7 +10,7 @@
 require_once __DIR__.'/vendor/autoload.php';
 require_once 'JsonManifestNetworkStrategy.php';
 
-use Symfony\Component\Asset\UrlPackage;
+use MediaWiki\MediaWikiServices;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Contracts\Cache\ItemInterface;
 
@@ -20,9 +20,10 @@ use Symfony\Contracts\Cache\ItemInterface;
  */
 class SkinAether extends SkinTemplate {
     private $neverlandConfig;
+    private $aetherConfig;
 
     public function __construct( $options = null ) {
-        $this->aetherConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'aether' );
+        $this->aetherConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'aether' );
         parent::__construct( $options );
     }
 
