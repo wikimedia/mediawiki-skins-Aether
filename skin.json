@@ -7,14 +7,14 @@
     ],
     "url": "",
     "requires": {
-        "MediaWiki": ">= 1.40.0"
+        "MediaWiki": ">= 1.41.0"
     },
     "descriptionmsg": "Aether descr",
     "namemsg": "skinname-aether",
     "license-name": "CC-BY-SA-4.0",
     "type": "skin",
     "ConfigRegistry": {
-        "aether": "GlobalVarConfig::newInstance"
+        "aether": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
     },
     "ValidSkinNames": {
         "aether": {
