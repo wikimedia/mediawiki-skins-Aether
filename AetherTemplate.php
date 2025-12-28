@@ -8,6 +8,7 @@
  * @ingroup Skins
  */
 
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 
 /**
@@ -46,7 +47,7 @@ class AetherTemplate extends BaseTemplate {
         if (isset($link['tooltiponly']) && $link['tooltiponly']) {
           $nav[$section][$key]['key'] = Linker::tooltip( $xmlID );
         } else {
-          $nav[$section][$key]['key'] = Xml::expandAttributes(Linker::tooltipAndAccesskeyAttribs($xmlID));
+          $nav[$section][$key]['key'] = Html::expandAttributes(Linker::tooltipAndAccesskeyAttribs($xmlID));
         }
       }
     }
